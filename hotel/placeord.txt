@@ -1,0 +1,6 @@
+0item=chapathi,price=20(2 pieces),svat=1,tax=2,total=23
+1item=alluparata,price=30 RS,svat=3,tax=8,total=71
+3item=veg meals,price=60 Rs,svat=3,tax=8,total=71
+4item=veg biryani,price=50 Rs,svat=2,tax=7,total=59
+5item=veg friedrice,price=30 Rs,svat=1,tax=4,total=35
+8item=roti,price=30 Rs,svat=1,tax=4,total=35
