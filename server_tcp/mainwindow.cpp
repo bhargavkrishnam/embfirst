@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ui->tableWidget->verticalHeader()->setVisible(false);
+   ////////////////////////////////////////////////////////////////////////////////////////////
     Server = new QTcpServer(this);
     if(!Server->listen(QHostAddress::Any,1234)){
         qDebug() << "Server not started:" << Server->errorString();
@@ -64,13 +65,16 @@ void MainWindow::StartReading()
             rowcount=1;
             int l=0,k=0;
             qDebug() << stringlist;
-            for(int i=0;i<stringlist.count()/4;i++){
+            for(int i=0;i<stringlist.count()/4;i++)
+            {
                 ui->tableWidget->setRowCount(rowcount);
                 ui->tableWidget->setColumnCount(4);
-                 ui->tableWidget->setItem((rowcount-1),l,new QTableWidgetItem(stringlist.at(k++)));
-                    ui->tableWidget->setItem((rowcount-1),l+1,new QTableWidgetItem(stringlist.at(k++)));
-                    ui->tableWidget->setItem((rowcount-1),l+2,new QTableWidgetItem(stringlist.at(k++)));
-                    ui->tableWidget->setItem((rowcount-1),l+3,new QTableWidgetItem(stringlist.at(k++)));
+
+             ui->tableWidget->setItem((rowcount-1),l,new QTableWidgetItem(stringlist.at(k++)));
+
+           ui->tableWidget->setItem((rowcount-1),l+1,new QTableWidgetItem(stringlist.at(k++)));
+         ui->tableWidget->setItem((rowcount-1),l+2,new QTableWidgetItem(stringlist.at(k++)));
+         ui->tableWidget->setItem((rowcount-1),l+3,new QTableWidgetItem(stringlist.at(k++)));
                 rowcount++;
             }
            buffer[64]={0};

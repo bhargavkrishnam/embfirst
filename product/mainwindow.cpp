@@ -16,7 +16,6 @@
 #include<QList>
 #include<QDoubleValidator>
 #include"QTcpSocket"
-#include<QRegExpValidator>
 
 
 int i=1;
@@ -64,7 +63,7 @@ MainWindow::MainWindow(QWidget *parent) :
             ui->tableWidget->setRowCount(i);
          QString text=in.readLine();
           QStringList stri= text.split(',');
-      //    qDebug()<<"str"<<stri;
+         // qDebug()<<"str"<<stri;
         //  qDebug()<<"i"<<i<<stri[0];
           ui->tableWidget->setItem(i-1,0,new QTableWidgetItem(stri[0]));
           ui->tableWidget->setItem(i-1,1,new QTableWidgetItem(stri[1]));
@@ -81,7 +80,7 @@ MainWindow::MainWindow(QWidget *parent) :
  // for TCP/IP //
 
    socket=new QTcpSocket();
-   socket->connectToHost("192.168.1.100",1234);
+   socket->connectToHost("127.0.0.1",1234);
 
  }
 
@@ -92,7 +91,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_add_clicked()
 {
-   QString str_product=ui->lineEdit_productname->text();
+   QString str_product=ui->lineEdit_productname->text();// for reading data from lineedit
    QString str_volume=ui->lineEdit_volume->text();
    QString str_market=ui->lineEdit_mcapital->text();
    QString str_credit=ui->lineEdit_credit->text();
@@ -277,3 +276,5 @@ void MainWindow::on_pushButton_send_clicked()////client
         ui->statusBar->showMessage("Sending data to server...",5000);
         qDebug()<<"sending";
 }
+
+

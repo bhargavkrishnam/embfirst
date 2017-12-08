@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>resource.qrc</file>
+        <file>abstract_color_background_picture_8016-wide.jpg</file>
+    </qresource>
+</RCC>
